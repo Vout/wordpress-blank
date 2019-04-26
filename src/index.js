@@ -7,10 +7,10 @@ import 'popper.js';
 // import 'bootstrap/js/dist/dropdown';
 // import 'bootstrap/js/dist/modal';
 // import 'bootstrap/js/dist/popover';
-import 'bootstrap/js/dist/scrollspy';
+// import 'bootstrap/js/dist/scrollspy';
 // import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/tooltip';
-import 'bootstrap/js/dist/util';
+// import 'bootstrap/js/dist/util';
 import "./sass/style.scss";
 
 "use strict";

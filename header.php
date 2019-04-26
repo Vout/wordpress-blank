@@ -34,7 +34,7 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <?php wpbootstrapsass_nav(); ?>
+                            <?php //wpbootstrapsass_nav(); ?>
                         </div>
                     </div>
                     <!-- /.container -->

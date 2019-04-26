@@ -31,7 +31,7 @@
 		<?php endif; ?>
 		<!-- /post thumbnail -->
 
-		<?php wpbootstrapsass_excerpt('wpbootstrapsasswp_index'); // Build your custom callback length in functions.php ?>
+		<?php // wpbootstrapsass_excerpt('wpbootstrapsasswp_index'); // Build your custom callback length in functions.php ?>
 
 		<?php edit_post_link(); ?>
 		<hr>

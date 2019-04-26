@@ -59,10 +59,7 @@ module.exports = {
             	test: /\.scss$/,
             	use: extractSass.extract({
             		use: [{
-            			loader: "css-loader",
-            			options: {
-            				minimize: true
-            			}
+            			loader: "css-loader"
             		}, {
             			loader: "sass-loader"
             		}],
