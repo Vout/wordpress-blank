@@ -1,16 +1,3 @@
-# wp-bootstrap4-sass
-A clean slate Wordpress theme template with Bootstrap(4), Sass, and a Webpack config with Babel.
-*This can be a decent starting point for simple theme development.*
-
-## Installation
-
-* Clone or download into your themes folder
-* Using command line(Terminal or Command Prompt) navigate to wp-bootstrap4-sass directory
-* *npm update --save-dev*  to update all devDependencies
-* Run *npm update*
-* Run *npm start* for Webpack development build
-* Run *npm run build* for Webpack production build
-
 ## Dev Dependencies
 
 *Note:* Using the extract-text-webpack-plugin Beta version since it plays better with Webpack 4; *npm i -D extract-text-webpack-plugin@next*
@@ -31,13 +18,3 @@ A clean slate Wordpress theme template with Bootstrap(4), Sass, and a Webpack co
 
 * [Bootstrap](https://getbootstrap.com/)
 * [Popper.js](https://popper.js.org/)
-
-## Acknowledgements
-
-* [WP Bootstrap Navwalker](https://github.com/wp-bootstrap/wp-bootstrap-navwalker)
-* [HTML 5 Blank](https://github.com/toddmotto/html5blank)
-
-## License
-
-MIT
-
