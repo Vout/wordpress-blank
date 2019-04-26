@@ -1,0 +1,31 @@
+{
+  "name": "wp-bootstrap4-sass",
+  "version": "1.2.0",
+  "description": "A clean slate Wordpress theme template with Bootstrap(4) Sass.\r *This can be a decent starting point for simple theme development.*",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack --mode development --watch",
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "tone4hook",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "popper.js": "^1.14.3"
+  }
+}
