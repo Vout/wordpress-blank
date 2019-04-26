@@ -1,7 +1,7 @@
 {
-  "name": "wp-bootstrap4-sass",
-  "version": "1.2.0",
-  "description": "A clean slate Wordpress theme template with Bootstrap(4) Sass.\r *This can be a decent starting point for simple theme development.*",
+  "name": "wordpress-blank",
+  "version": "1.0.0",
+  "description": "A clean slate Wordpress theme template with Bootstrap(4).",
   "main": "src/index.js",
   "scripts": {
     "watch": "webpack --mode development --watch",
@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "tone4hook",
+  "author": "Reind Dooyeweerd",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "bootstrap": ">=4.3.1",
-    "popper.js": ">=1.15.0"
+    "popper.js": ">=115.0"
   }
 }
