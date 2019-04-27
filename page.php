@@ -31,7 +31,7 @@
 					<!-- article -->
 					<article>
 
-						<h2><?php _e( 'Sorry, nothing to display.', 'wpbootstrapsass' ); ?></h2>
+						<h2><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h2>
 
 					</article>
 					<!-- /article -->

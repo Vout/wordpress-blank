@@ -6,7 +6,7 @@
 				<!-- section -->
 				<section>
 
-					<h1 class="page-header"><?php _e( 'Tag Archive: ', 'wpbootstrapsass' ); echo single_tag_title('', false); ?></h1>
+					<h1 class="page-header"><?php _e( 'Tag Archive: ', 'wpblank' ); echo single_tag_title('', false); ?></h1>
 
 					<?php get_template_part('loop'); ?>
 

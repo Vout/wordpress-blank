@@ -6,7 +6,7 @@
 				<!-- section -->
 				<section>
 
-					<h1 class="page-header"><?php _e( 'Categories for ', 'wpbootstrapsass' ); single_cat_title(); ?></h1>
+					<h1 class="page-header"><?php _e( 'Categories for ', 'wpblank' ); single_cat_title(); ?></h1>
 
 					<?php get_template_part('loop'); ?>
 

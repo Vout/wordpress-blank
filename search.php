@@ -6,7 +6,7 @@
 				<!-- section -->
 				<section>
 
-					<h1 class="page-header"><?php echo sprintf( __( '%s Search Results for ', 'wpbootstrapsass' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+					<h1 class="page-header"><?php echo sprintf( __( '%s Search Results for ', 'wpblank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
 
 					<?php get_template_part('loop'); ?>
 

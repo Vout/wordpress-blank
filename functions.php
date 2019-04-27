@@ -245,7 +245,7 @@
     add_action('get_header', 'wpblank_enable_threaded_comments'); // Enable Threaded Comments
     add_action('init', 'wpblank_register_menu'); // Add WP Bootstrap Sass Menu
     add_action('widgets_init', 'wpblank_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-    // add_action('init', 'wpbootstrapsass_pagination'); // Add our wpbootstrapsass Pagination
+    // add_action('init', 'wpblank_pagination'); // Add our wpblank Pagination
 
     // Remove Actions
     remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -263,7 +263,7 @@
 
     // // Add Filters
     add_filter('script_loader_tag', 'wpblank_add_script_tag_attributes', 10, 2); // Add attributes to CDN script tag
-    // add_filter('avatar_defaults', 'wpbootstrapsassgravatar'); // Custom Gravatar in Settings > Discussion
+    // add_filter('avatar_defaults', 'wpblankgravatar'); // Custom Gravatar in Settings > Discussion
     add_filter('body_class', 'wpblank_add_slug_to_body_class'); // Add slug to body class (Starkers build)
     add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
     add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
@@ -274,7 +274,7 @@
     add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
     add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
     add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-    // add_filter('excerpt_more', 'wpbootstrapsass_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+    // add_filter('excerpt_more', 'wpblank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
     add_filter('show_admin_bar', 'wpblank_remove_admin_bar'); // Remove Admin bar
     add_filter('style_loader_tag', 'wpblank_styles_remove'); // Remove 'text/css' from enqueued stylesheet
     add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails

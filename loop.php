@@ -13,12 +13,12 @@
 
 		<!-- post details -->
 		<p class="lead">
-			<span class="author"><?php _e( 'Published by', 'wpbootstrapsass' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="author"><?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?></span>
 		</p>
 		<p>
 			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 			<span class="text-muted">|</span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpbootstrapsass' ), __( '1 Comment', 'wpbootstrapsass' ), __( '% Comments', 'wpbootstrapsass' )); ?></span>
+			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?></span>
 		</p>
 		<!-- /post details -->
 		<!-- post thumbnail -->
@@ -31,7 +31,7 @@
 		<?php endif; ?>
 		<!-- /post thumbnail -->
 
-		<?php // wpbootstrapsass_excerpt('wpbootstrapsasswp_index'); // Build your custom callback length in functions.php ?>
+		<?php // wpblank_excerpt('wpblankwp_index'); // Build your custom callback length in functions.php ?>
 
 		<?php edit_post_link(); ?>
 		<hr>
@@ -45,7 +45,7 @@
 
 	<!-- article -->
 	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'wpbootstrapsass' ); ?></h2>
+		<h2><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h2>
 	</article>
 	<!-- /article -->
 

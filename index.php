@@ -6,7 +6,7 @@
 				<!-- section -->
 				<section>
 
-					<h1 class="page-header"><?php _e( 'Latest Posts', 'wpbootstrapsass' ); ?></h1>
+					<h1 class="page-header"><?php _e( 'Latest Posts', 'wpblank' ); ?></h1>
 
 					<?php get_template_part('loop'); ?>
 

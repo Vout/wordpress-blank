@@ -19,7 +19,7 @@
 						<!-- /post title -->
 						<!-- Author -->
 						<p class="lead">
-							<span class="author"><?php _e( 'Published by', 'wpbootstrapsass' ); ?> <?php the_author_posts_link(); ?></span>
+							<span class="author"><?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?></span>
 						</p>
 						<hr>
 						<!-- Date -->
@@ -28,7 +28,7 @@
 								<?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?>
 							</span>
 							<span class="text-muted">|</span>
-							<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpbootstrapsass' ), __( '1 Comment', 'wpbootstrapsass' ), __( '% Comments', 'wpbootstrapsass' )); ?></span>
+							<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?></span>
 						</p>
 						<!-- /post details -->
 						<hr>
@@ -45,14 +45,14 @@
 						<?php the_content(); // Dynamic Content ?>
 						<hr>
 						<p>
-							<?php the_tags( __( 'Tags: ', 'wpbootstrapsass' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+							<?php the_tags( __( 'Tags: ', 'wpblank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 						</p>
 
 						<p>
-							<?php _e( 'Categorised in: ', 'wpbootstrapsass' ); the_category(', '); // Separated by commas ?>
+							<?php _e( 'Categorised in: ', 'wpblank' ); the_category(', '); // Separated by commas ?>
 						</p>
 
-						<p class="text-muted"><?php _e( 'This post was written by ', 'wpbootstrapsass' ); the_author(); ?></p>
+						<p class="text-muted"><?php _e( 'This post was written by ', 'wpblank' ); the_author(); ?></p>
 
 						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
@@ -68,7 +68,7 @@
 					<!-- article -->
 					<article>
 
-						<h1><?php _e( 'Sorry, nothing to display.', 'wpbootstrapsass' ); ?></h1>
+						<h1><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h1>
 
 					</article>
 					<!-- /article -->
