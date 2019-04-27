@@ -17,13 +17,9 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-
-		<!-- wrapper -->
 		<div class="wrapper">
 
-			<!-- header -->
 			<header class="header clear">
-
                 <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
                     <div class="container">
                         <a class="navbar-brand" href="<?php echo home_url(); ?>">
@@ -34,11 +30,8 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <?php //wpbootstrapsass_nav(); ?>
+                            <?php wpblank_nav(); ?>
                         </div>
                     </div>
-                    <!-- /.container -->
                 </nav>
-
 			</header>
-			<!-- /header -->
