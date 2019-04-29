@@ -35,8 +35,13 @@
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
 
+// Variables
+@import "./_variables";
+
 // Modules
 // @import "modules/...";
 
 // Partials
-// @import "partials/...";
+@import "partials/_base";
+@import "partials/_bootstrap-components";
+@import "partials/_wp-styles";

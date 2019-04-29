@@ -1,7 +1,7 @@
 <?php /* Template Name: Demo Page Template */ get_header(); ?>
 <!-- Demo Page Template for no sidebar  -->
 <?php get_header(); ?>
-<main>
+<main class="main-content">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
