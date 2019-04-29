@@ -8,13 +8,13 @@
 
 				<?php if (have_posts()): the_post(); ?>
 
-					<h1 class="page-header"><?php _e( 'Author Archives for ', 'wpbootstrapsass' ); echo get_the_author(); ?></h1>
+					<h1 class="page-header"><?php _e( 'Author Archives for ', 'wpblank' ); echo get_the_author(); ?></h1>
 
 				<?php if ( get_the_author_meta('description')) : ?>
 
 				<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 
-					<h2><?php _e( 'About ', 'wpbootstrapsass' ); echo get_the_author() ; ?></h2>
+					<h2><?php _e( 'About ', 'wpblank' ); echo get_the_author() ; ?></h2>
 					<hr>
 
 					<?php echo wpautop( get_the_author_meta('description') ); ?>
@@ -32,12 +32,12 @@
 						<!-- /Post title -->
 						<!-- post details -->
 						<p class="lead">
-							<span class="author"><?php _e( 'by', 'wpbootstrapsass' ); ?> <?php the_author_posts_link(); ?></span>
+							<span class="author"><?php _e( 'by', 'wpblank' ); ?> <?php the_author_posts_link(); ?></span>
 						</p>
 						<p>
 							<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 							<span class="text-muted">|</span>
-							<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpbootstrapsass' ), __( '1 Comment', 'wpbootstrapsass' ), __( '% Comments', 'wpbootstrapsass' )); ?></span>
+							<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?></span>
 						</p>
 						<!-- /post details -->
 						<hr>
@@ -50,7 +50,7 @@
 						<?php endif; ?>
 						<!-- /post thumbnail -->
 
-						<?php wpbootstrapsass_excerpt('wpbootstrapsasswp_index'); // Build your custom callback length in functions.php ?>
+						<?php wpblank_excerpt('wpblankwp_index'); // Build your custom callback length in functions.php ?>
 
 						<br class="clear">
 
@@ -67,7 +67,7 @@
 					<!-- article -->
 					<article>
 
-						<h2><?php _e( 'Sorry, nothing to display.', 'wpbootstrapsass' ); ?></h2>
+						<h2><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h2>
 
 					</article>
 					<!-- /article -->
