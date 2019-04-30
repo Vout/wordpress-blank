@@ -62,7 +62,7 @@
 /*!****************************!*\
   !*** multi ./src/index.js ***!
   \****************************/
-/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = __webpack_require__(/*! /Users/reind/Projects/magento-to-go/wp-content/themes/wordpress-blank/src/index.js */"./src/index.js");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?')},jquery:
+/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = __webpack_require__(/*! /Users/reinddooyeweerd/Projects/wordpress/wp-content/themes/wp-blank/src/index.js */"./src/index.js");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?')},jquery:
 /*!*************************!*\
   !*** external "jQuery" ***!
   \*************************/

@@ -15,6 +15,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "node-sass": "^4.11.0",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "bootstrap": ">=4.3.1",
+    "browser-sync": "^2.26.5",
     "popper.js": ">=1.15.0"
   }
 }
