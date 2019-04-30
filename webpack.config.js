@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack'); // reference to webpack Object
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 const extractSass = new ExtractTextPlugin({
     filename: "style.min.css",
 });
@@ -12,7 +13,6 @@ const paths = {
 };
 
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-
 
 module.exports = {
     entry: [
@@ -79,7 +79,7 @@ module.exports = {
         ],
     },
 
-      resolve: {
+    resolve: {
         extensions: ['.js', '.jsx'],
     },
 };
