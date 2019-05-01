@@ -1,5 +1,5 @@
 # Blank Wordpress starter theme for new projects
-Simply clone or download the repository, run npm install, and npm start for development or npm build to run an production build
+Simply clone or download the repository, run `npm install`, and `npm start` for development or `npm build` to run an production build
 
 ## Dev Dependencies
 * [Babel](https://babeljs.io/)
