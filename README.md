@@ -1,7 +1,7 @@
+# Blank Wordpress starter theme for new projects
+Simply clone or download the repository, run npm install, and npm start for development or npm build to run an production build
+
 ## Dev Dependencies
-
-*Note:* Using the extract-text-webpack-plugin Beta version since it plays better with Webpack 4; *npm i -D extract-text-webpack-plugin@next*
-
 * [Babel](https://babeljs.io/)
 * [babel-loader](https://github.com/babel/babel-loader)
 * [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
@@ -15,6 +15,5 @@
 * [webpack-cli](https://webpack.js.org/api/cli/)
 
 ## Dependencies
-
 * [Bootstrap](https://getbootstrap.com/)
 * [Popper.js](https://popper.js.org/)
