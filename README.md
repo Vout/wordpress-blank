@@ -5,7 +5,7 @@ Simply clone or download the repository, run `npm install`, and `npm start` for 
 * [Babel](https://babeljs.io/)
 * [babel-loader](https://github.com/babel/babel-loader)
 * [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
-* [browser-sync-webpack-plugin] (https://www.npmjs.com/package/browser-sync-webpack-plugin)
+* [browser-sync-webpack-plugin](https://www.npmjs.com/package/browser-sync-webpack-plugin)
 * [css-loader](https://www.npmjs.com/package/css-loader)
 * [extract-text-webpack-plugin ^4.0.0-beta.0](https://github.com/webpack-contrib/extract-text-webpack-plugin)
 * [node-sass](https://www.npmjs.com/package/node-sass)
