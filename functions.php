@@ -11,7 +11,7 @@
     }
 
     if (function_exists('add_theme_support')) {
-    
+
         // Add Menu Support
         add_theme_support('menus');
 
@@ -166,6 +166,57 @@
     }
 
     /* ======================================================================
+        CUSTOM EXCERPTS
+	====================================================================== */
+    // Create 20 Word Callback for Index page Excerpts, call using wpblank_excerpt('wpblank_index');
+    function wpblank_index($length) {
+        return 20;
+    }
+
+    // Create 40 Word Callback for Custom Post Excerpts, call using wpblank_excerpt('wpblank_custom_post');
+    function wpblank_custom_post($length) {
+        return 40;
+    }
+
+    // Create the Custom Excerpts callback
+    function wpblank_excerpt($length_callback = '', $more_callback = '') {
+        global $post;
+        if (function_exists($length_callback)) {
+            add_filter('excerpt_length', $length_callback);
+        }
+        if (function_exists($more_callback)) {
+            add_filter('excerpt_more', $more_callback);
+        }
+        $output = get_the_excerpt();
+        $output = apply_filters('wptexturize', $output);
+        $output = apply_filters('convert_chars', $output);
+        $output = '<p>' . $output . '</p>';
+        echo $output;
+    }
+
+    /* ======================================================================
+        CUSTOM EXCERPTS
+        Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
+	====================================================================== */
+    function wpblank_pagination() {
+        global $wp_query;
+        $big = 999999999;
+        $links = paginate_links(array(
+            'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+            'format' => '?paged=%#%',
+            'current' => max(1, get_query_var('paged')),
+            'total' => $wp_query->max_num_pages,
+            'prev_text' => '<span class="border p-1">&lt;</span>',
+            'next_text' => '<span class="border p-1">&gt;</span>',
+            'before_page_number' => '<span class="border p-1">',
+            'after_page_number' => '</span>',
+        ));
+        if ( $links ) :
+            echo $links;
+        endif;
+    }
+
+    /* ======================================================================
         ENABLE THREADED COMMENTS
 	====================================================================== */
     function wpblank_enable_threaded_comments() {
@@ -186,12 +237,12 @@
         $document->loadHTML(utf8_decode($content));
 
         $imgs = $document->getElementsByTagName('img');
-        foreach ($imgs as $img) {           
+        foreach ($imgs as $img) {
             $img->setAttribute('class','img-fluid');
         }
 
         $html = $document->saveHTML();
-        return $html;  	
+        return $html;
     }
 
     /* ======================================================================
@@ -227,7 +278,7 @@
 
     /* ======================================================================
         STOP CONTACTFORM7 ADDING OWN STYLES
-    ====================================================================== */  
+    ====================================================================== */
     add_filter('wpcf7_form_elements', function($content) {
         $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
         return $content;
@@ -243,7 +294,7 @@
     add_action('get_header', 'wpblank_enable_threaded_comments'); // Enable Threaded Comments
     add_action('init', 'wpblank_register_menu'); // Add WP Bootstrap Sass Menu
     add_action('widgets_init', 'wpblank_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-    // add_action('init', 'wpblank_pagination'); // Add our wpblank Pagination
+    add_action('init', 'wpblank_pagination'); // Add our wpblank Pagination
 
     // Remove Actions
     remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

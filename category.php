@@ -1,22 +1,10 @@
 <?php get_header(); ?>
-<main class="main-content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<!-- section -->
-				<section>
-
-					<h1 class="page-header"><?php _e( 'Categories for ', 'wpblank' ); single_cat_title(); ?></h1>
-
-					<?php get_template_part('loop'); ?>
-
-					<?php get_template_part('pagination'); ?>
-
-				</section>
-				<!-- /section -->
-			</div><!-- /.col-md-8 -->
-			<?php get_sidebar(); ?>
-		</div><!-- /.row -->
-	</div><!-- /.container -->
+<main>
+	<section>
+		<h1><?php _e( 'Categories for ', 'wpblank' ); single_cat_title(); ?></h1>
+		<?php get_template_part('loop'); ?>
+		<?php get_template_part('pagination'); ?>
+	</section>
+	<?php get_sidebar(); ?>
 </main>
 <?php get_footer(); ?>

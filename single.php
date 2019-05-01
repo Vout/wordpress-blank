@@ -1,85 +1,54 @@
 <?php get_header(); ?>
-<main class="main-content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<!-- section -->
-				<section>
+<main>
+    <section>
+        <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h1>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                </h1>
 
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+                <p>
+                    <?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?>
+                </p>
 
+                <p>
+                    <?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?><br />
+                    <?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?>
+                </p>
 
-					<!-- article -->
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <?php the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
+                    </a>
+                <?php endif; ?>
 
-						<!-- post title -->
-						<h1>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-						</h1>
-						<!-- /post title -->
-						<!-- Author -->
-						<p class="lead">
-							<span class="author"><?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?></span>
-						</p>
-						<hr>
-						<!-- Date -->
-						<p>
-							<span class="date">
-								<?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?>
-							</span>
-							<span class="text-muted">|</span>
-							<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?></span>
-						</p>
-						<!-- /post details -->
-						<hr>
+                <?php the_content(); ?>
 
-						<!-- post thumbnail -->
-						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-								<?php the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
-							</a>
-							<hr>
-						<?php endif; ?>
-						<!-- /post thumbnail -->
+                <p>
+                    <?php the_tags( __( 'Tags: ', 'wpblank' ), ', ', '<br>'); ?>
+                </p>
 
-						<?php the_content(); // Dynamic Content ?>
-						<hr>
-						<p>
-							<?php the_tags( __( 'Tags: ', 'wpblank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-						</p>
+                <p>
+                    <?php _e( 'Categorised in: ', 'wpblank' ); the_category(', '); // Separated by commas ?>
+                </p>
 
-						<p>
-							<?php _e( 'Categorised in: ', 'wpblank' ); the_category(', '); // Separated by commas ?>
-						</p>
+                <p>
+                    <?php _e( 'This post was written by ', 'wpblank' ); the_author(); ?>
+                </p>
 
-						<p class="text-muted"><?php _e( 'This post was written by ', 'wpblank' ); the_author(); ?></p>
+                <?php edit_post_link(); ?>
 
-						<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+                <?php comments_template(); ?>
 
-						<?php comments_template(); ?>
+                </article>
+            <?php endwhile; ?>
 
-					</article>
-					<!-- /article -->
-
-				<?php endwhile; ?>
-
-				<?php else: ?>
-
-					<!-- article -->
-					<article>
-
-						<h1><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h1>
-
-					</article>
-					<!-- /article -->
-
-				<?php endif; ?>
-
-				</section>
-				<!-- /section -->
-			</div><!-- /.col-md-8 -->
-			<?php get_sidebar(); ?>
-		</div><!-- /.row -->
-	</div><!-- /.container -->
+            <?php else: ?>
+                <article>
+                    <h1><?php _e( 'Sorry, nothing to display.', 'wpblank' ); ?></h1>
+                </article>
+            <?php endif; ?>
+    </section>
+    <?php get_sidebar(); ?>
 </main>
 <?php get_footer(); ?>

@@ -17,36 +17,14 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-		<header class="main-header">
-			<nav class="navbar navbar-expand-md navbar-light bg-light">
-                    <div class="container">
-                        <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <?php wpblank_nav(); ?>
-                        </div>
-                    </div>
-                </nav>
+		<header>
+			<nav>
+                <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarSupportedContent">
+                    <?php wpblank_nav(); ?>
+                </div>
+            </nav>
 		</header>
-
-			<!-- <header class="header clear">
-                <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-                    <div class="container">
-                        <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <?php wpblank_nav(); ?>
-                        </div>
-                    </div>
-                </nav>
-			</header> -->
