@@ -18,7 +18,7 @@
 
                 <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                    <?php the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
+                    <?php get_the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
                     </a>
                 <?php endif; ?>
 
