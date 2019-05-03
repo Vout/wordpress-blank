@@ -7,6 +7,8 @@
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                 </h1>
 
+                <p><?php wpblank_featured_image_behaviour(); ?>
+
                 <p>
                     <?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?>
                 </p>
@@ -18,7 +20,7 @@
 
                 <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                    <?php get_the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
+                    <?php echo the_post_thumbnail('large', ['class' => 'img-fluid']); // Fullsize image for the single post ?>
                     </a>
                 <?php endif; ?>
 

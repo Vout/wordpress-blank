@@ -246,6 +246,20 @@
         return $html;
     }
 
+    // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
+    function remove_thumbnail_dimensions($html) {
+        $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
+        return $html;
+    }
+
+    // Featured image behaviour on posts and pages
+    if (!function_exists( 'wpblank_featured_image_behaviour')) :
+        function wpblank_featured_image_behaviour() {
+            $meta = get_post_meta(get_the_ID(), 'theme_options_featured-image-behaviour', true);
+            echo $meta;
+        }
+    endif;
+
     /* ======================================================================
         REMOVE RECENT COMMENT STYLES
 	====================================================================== */
