@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main>
 	<section>
 		<h1><?php _e( 'Latest Posts', 'wpblank' ); ?></h1>
 		<?php get_template_part('loop'); ?>
