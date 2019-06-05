@@ -1,23 +1,30 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<h1>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
+		<h1 class="article__title">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 		</h1>
 
-		<p><?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?></p>
+		<div class="article__author">
+            <?php _e( 'Published by', 'wpblank' ); ?> <?php the_author_posts_link(); ?>
+        </div>
 
-		<p>
-			<?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?><br />
-			<?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'wpblank' ), __( '1 Comment', 'wpblank' ), __( '% Comments', 'wpblank' )); ?>
-		</p>
+		<div class="article__publish-date">
+			<time><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></time>
+		</div>
 
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail('medium_large', array('class' => 'img-fluid') ); // Declare pixel size you need inside the array ?>
+        <div class="article__comment-count">
+            <?php if (comments_open(get_the_ID())) comments_popup_link( __('Leave your thoughts', 'wpblank'), __('1 Comment', 'wpblank'), __('% Comments', 'wpblank')); ?>
+        </div>
+
+		<?php if (has_post_thumbnail()) : ?>
+			<a class="article__featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<?php the_post_thumbnail('medium_large', array('class' => 'img-fluid')); ?>
 			</a>
 		<?php endif; ?>
 
-		<?php wpblank_excerpt('wpblankwp_index'); ?>
+        <div class="article__content">
+		    <?php wpblank_excerpt('wpblankwp_index'); ?>
+        </div>
 
 		<?php edit_post_link(); ?>
 	</article>
