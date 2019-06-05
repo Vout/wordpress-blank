@@ -1,7 +1,11 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
+		<?php if (!is_singular()) : ?>
+			<a class="article__link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"></a>
+		<?php endif; ?>
+
 		<h1 class="article__title">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+			<?php the_title(); ?>
 		</h1>
 
 		<div class="article__author">
