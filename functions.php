@@ -106,7 +106,7 @@
             'container'       => 'div',
             'container_class' => 'collapse navbar-collapse',
             'container_id'    => 'bs-example-navbar-collapse-1',
-            'menu_class'      => 'navbar-nav ml-auto',
+            'menu_class'      => 'navbar-nav mr-auto',
             'menu_id'         => '',
             'echo'            => true,
             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
@@ -115,6 +115,28 @@
             'link_before'     => '',
             'link_after'      => '',
             'depth'           => 2,
+            'walker'          => new WP_Bootstrap_Navwalker()
+            )
+        );
+    }
+
+    function wpblank_nav_extra() {
+        wp_nav_menu(
+        array(
+            'theme_location'  => 'extra-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => '',
+            'container_id'    => '',
+            'menu_class'      => 'navbar-nav ml-auto',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'depth'           => 1,
             'walker'          => new WP_Bootstrap_Navwalker()
             )
         );
@@ -138,6 +160,42 @@
     // Remove Injected classes, ID's and Page ID's from Navigation <li> items
     function my_css_attributes_filter($var) {
         return is_array($var) ? array() : '';
+    }
+
+    function wpblank_widgets_init() {
+        register_sidebar(
+            array(
+                'name'          => 'Footer column 1',
+                'id'            => 'footer_col_1',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<h4>',
+                'after_title'   => '</h4>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'          => 'Footer column 2',
+                'id'            => 'footer_col_2',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<h4>',
+                'after_title'   => '</h4>',
+            )
+        );
+
+        register_sidebar(
+            array(
+                'name'          => 'Footer column 3',
+                'id'            => 'footer_col_3',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<h4>',
+                'after_title'   => '</h4>',
+            )
+        );
+
     }
 
     /* ======================================================================
@@ -308,6 +366,7 @@
     // add_action('wp_print_scripts', 'wpblank_conditional_scripts'); // Add Conditional Page Scripts
     add_action('get_header', 'wpblank_enable_threaded_comments'); // Enable Threaded Comments
     add_action('init', 'wpblank_register_menu'); // Add WP Bootstrap Sass Menu
+    add_action('widgets_init', 'wpblank_widgets_init'); // Register all widget areas
     add_action('widgets_init', 'wpblank_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
     add_action('init', 'wpblank_pagination'); // Add our wpblank Pagination
 
