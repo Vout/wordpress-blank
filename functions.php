@@ -103,10 +103,10 @@
         array(
             'theme_location'  => 'header-menu',
             'menu'            => '',
-            'container'       => 'div',
+            'container'       => 'nav',
             'container_class' => 'collapse navbar-collapse',
-            'container_id'    => 'bs-example-navbar-collapse-1',
-            'menu_class'      => 'navbar-nav mr-auto',
+            'container_id'    => '',
+            'menu_class'      => 'navbar-nav',
             'menu_id'         => '',
             'echo'            => true,
             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
