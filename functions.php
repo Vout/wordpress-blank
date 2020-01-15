@@ -91,6 +91,19 @@
         return $parts[0];
     }
 
+    // Remove jQuery migrate
+    function wpblank_remove_jquery_migrate($scripts) {
+        if (!is_admin() && isset($scripts->registered['jquery'])) {
+            $script = $scripts->registered['jquery'];
+
+            if ($script->deps) { // Check whether the script has any dependencies
+                $script->deps = array_diff($script->deps, array(
+                    'jquery-migrate'
+                ));
+            }
+        }
+    }
+
     /* ======================================================================
         CUSTOM MENU WALKER TO GET AN PROPER BOOTSTRAP MENU
 	====================================================================== */
@@ -305,7 +318,7 @@
     }
 
     // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-    function remove_thumbnail_dimensions($html) {
+    function wpblank_remove_thumbnail_dimensions($html) {
         $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
         return $html;
     }
@@ -317,6 +330,17 @@
             echo $meta;
         }
     endif;
+
+    /* ======================================================================
+        ADD NATIVE LAZYLOAD SUPPORT
+	====================================================================== */
+    function wpblank_lazy_load_attributes($content) {
+        /* Add loading="lazy" to all images filtered by the_content */
+        $content = str_replace('<img','<img loading="lazy"', $content);
+        /* Add loading="lazy" to all iframes filtered by the_content */
+        $content = str_replace('<iframe','<iframe loading="lazy"', $content);
+        return $content;
+    }
 
     /* ======================================================================
         REMOVE RECENT COMMENT STYLES
@@ -364,6 +388,7 @@
     add_action('wp_enqueue_scripts', 'wpblank_styles'); // Add Theme Stylesheet
     add_action('init', 'wpblank_scripts'); // Add Custom Scripts to wp_head
     // add_action('wp_print_scripts', 'wpblank_conditional_scripts'); // Add Conditional Page Scripts
+    add_action('wp_default_scripts', 'wpblank_remove_jquery_migrate'); // Remove jQuery migrate
     add_action('get_header', 'wpblank_enable_threaded_comments'); // Enable Threaded Comments
     add_action('init', 'wpblank_register_menu'); // Add WP Bootstrap Sass Menu
     add_action('widgets_init', 'wpblank_widgets_init'); // Register all widget areas
@@ -384,7 +409,7 @@
     remove_action('wp_head', 'rel_canonical');
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
-    // // Add Filters
+    // Add Filters
     add_filter('script_loader_tag', 'wpblank_add_script_tag_attributes', 10, 2); // Add attributes to CDN script tag
     // add_filter('avatar_defaults', 'wpblankgravatar'); // Custom Gravatar in Settings > Discussion
     add_filter('body_class', 'wpblank_add_slug_to_body_class'); // Add slug to body class (Starkers build)
@@ -400,9 +425,10 @@
     // add_filter('excerpt_more', 'wpblank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
     add_filter('show_admin_bar', 'wpblank_remove_admin_bar'); // Remove Admin bar
     add_filter('style_loader_tag', 'wpblank_styles_remove'); // Remove 'text/css' from enqueued stylesheet
-    add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
-    add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+    add_filter('post_thumbnail_html', 'wpblank_remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
+    add_filter('image_send_to_editor', 'wpblank_remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
     add_filter('the_content', 'wpblank_add_class_to_image_in_content'); // Add .img-fluid class to images in the content
+    add_filter('the_content','wpblank_lazy_load_attributes'); // Native lazyoad images for browsers with lazyload support
     add_filter('wpseo_json_ld_output', 'wpblank_remove_yoast_json', 10, 1); // Rwmove Yoast spam
     add_filter( 'wpcf7_load_js', '__return_false' ); // Remove contactform7 js if no form on page
     add_filter( 'wpcf7_load_css', '__return_false' ); // Remove contactform7 css if no form on page
