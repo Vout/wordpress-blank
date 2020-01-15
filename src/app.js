@@ -11,12 +11,16 @@ import 'bootstrap/js/dist/scrollspy';
 import 'bootstrap/js/dist/tab';
 import 'bootstrap/js/dist/tooltip';
 import 'bootstrap/js/dist/util';
+
+// Styles
 import "./sass/style.scss";
+
+// Custom scripts
 
 "use strict";
 
 (function($) {
 	$(function() {
-		console.log("Document Ready");
+        console.log("it works");
 	});
 })(jQuery);
